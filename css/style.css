@@ -651,6 +651,10 @@ a {
 #header .header-nav .social a.twitter:hover {
   border: 1px solid #24c1f6;
 }
+#header .header-nav .social a.Website {
+  background: url("/img/user.png") center no-repeat #55cff8;
+  border: 1px solid #55cff8;
+}
 #header .header-nav .social a.linkedin {
   background: url("/img/linkedin.png") center no-repeat #005a87;
   border: 1px solid #005a87;
