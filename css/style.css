@@ -655,6 +655,9 @@ a {
   background: url("/img/user.png") center no-repeat #55cff8;
   border: 1px solid #55cff8;
 }
+#header .header-nav .social a.Website:hover {
+  border: 1px solid #24c1f6;
+}
 #header .header-nav .social a.linkedin {
   background: url("/img/linkedin.png") center no-repeat #005a87;
   border: 1px solid #005a87;
@@ -677,8 +680,8 @@ a {
   border: 1px solid #06c611;
 }
 #header .header-nav .social a.mail {
-  background: url("/img/mail.png") center no-repeat #005a87;
-  border: 1px solid #005a87;
+  background: url("/img/mail.png") center no-repeat #7C7C7C;
+  border: 1px solid #7C7C7C;
 }
 #header .header-nav .social a.mail:hover {
   border: 1px solid #006b98;
