@@ -652,8 +652,8 @@ a {
   border: 1px solid #24c1f6;
 }
 #header .header-nav .social a.Website {
-  background: url("/img/user.png") center no-repeat #000;
-  border: 1px solid #222;
+  background: url("/img/user.png") center no-repeat #fff;
+  border: 1px solid #eee;
 }
 #header .header-nav .social a.Website:hover {
   border: 1px solid #7C7C7C;
