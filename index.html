@@ -198,119 +198,27 @@
 <li><p><strong>No Block-Level Scope</strong>(variables scoped to surrounding curly brackets) example: variable in function without “var” is to be a global variable. </p>
 </li>
 <li><p><strong>Local Variables Have Priority Over Global Variables in Functions</strong><br>If you declare a global variable and a local variable with the same name, the local variable will have priority when you attempt to use the variable inside a function (local scope)</p>
-<pre><code>var name = &quot;Paul&quot;;
-
-function users () {
-    // Here, the name variable is local and it takes precedence over the same name variable in the global scope​
-var name = &quot;Jack&quot;;
-
-// The search for name starts right here inside the function before it attempts to look outside the function in the global scope​
-console.log (name); 
-}
-
-users (); // Jack
-</code></pre></li>
+</li>
 </ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"Paul"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">users</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="comment">// Here, the name variable is local and it takes precedence over the same name variable in the global scope​</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">"Jack"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// The search for name starts right here inside the function before it attempts to look outside the function in the global scope​</span></span><br><span class="line"><span class="built_in">console</span>.log (name); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">users (); <span class="comment">// Jack</span></span><br></pre></td></tr></table></figure>
 <p><strong>Global Variables</strong><br>All variables declared outside a function are in the global scope. In the browser, which is what we are concerned with as front-end developers, the global context or scope is the window object (or the entire HTML document).</p>
 <ul>
 <li>If a variable is initialized (assigned a value) without first being declared with the var keyword, it is automatically added to the global context and it is thus a global variable</li>
 </ul>
 <p>Pay attention to i: </p>
-<pre><code>for (var i = 1; i &lt;= 10; i++) {
-    console.log (i); // outputs 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
-};
-
-// The variable i is a global variable and it is accessible in the following function with the last value it was assigned above ​
-function aNumber () {
-console.log(i);
-}
-
-// The variable i in the aNumber function below is the global variable i that was changed in the for loop above. Its last value was 11, set just before the for loop exited:
-aNumber ();  // 11
-</code></pre><ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) &#123;</span><br><span class="line">	<span class="built_in">console</span>.log (i); <span class="comment">// outputs 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// The variable i is a global variable and it is accessible in the following function with the last value it was assigned above ​</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">aNumber</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// The variable i in the aNumber function below is the global variable i that was changed in the for loop above. Its last value was 11, set just before the for loop exited:</span></span><br><span class="line">aNumber ();  <span class="comment">// 11</span></span><br></pre></td></tr></table></figure>
+<ul>
 <li><strong>setTimeout</strong> Variables are Executed in the Global Scope<br>Note that all functions in setTimeout are executed in the global scope. This is a tricky bit; consider this:</li>
 </ul>
 <p>// The use of the “this” object inside the setTimeout function refers to the Window object, not to myObj​</p>
-<pre><code>var highValue = 200;
-var constantVal = 2;
-var myObj = {
-    highValue: 20,
-    constantVal: 5,
-    calculateIt: function () {
- setTimeout (function  () {
-    console.log(this.constantVal * this.highValue);
-}, 2000);
-    }
-}
-
-// The &quot;this&quot; object in the setTimeout function used the global highValue and constantVal variables, because the reference to &quot;this&quot; in the setTimeout function refers to the global window object, not to the myObj object as we might expect.​
-
-myObj.calculateIt(); // 400
-// This is an important point to remember.
-</code></pre><p><strong>Do not Pollute the Global Scope</strong><br>you have to know that it is important to avoid creating many variables in the global scope, such as this:</p>
-<pre><code>// These two variables are in the global scope and they shouldn&apos;t be here
-var firstName, lastName;
-
-function fullName () {
-    console.log (&quot;Full Name: &quot; + firstName + &quot; &quot; + lastName );
-}
-</code></pre><p>This is the improved code and the proper way to avoid polluting the global scope</p>
-<pre><code>// Declare the variables inside the function where they are local variables
-
-function fullName () {
-    var firstName = &quot;Michael&quot;, lastName = &quot;Jackson&quot;;
-
-    console.log (&quot;Full Name: &quot; + firstName + &quot; &quot; + lastName );
-}
-</code></pre><p><strong>Variable Hoisting</strong><br><em>All variable declarations are hoisted (lifted and declared) to the top of the function</em>, if defined in a function, or the top of the global context, if outside a function.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">	<span class="keyword">var</span> highValue = <span class="number">200</span>;</span><br><span class="line">	<span class="keyword">var</span> constantVal = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">var</span> myObj = &#123;</span><br><span class="line">		highValue: <span class="number">20</span>,</span><br><span class="line">		constantVal: <span class="number">5</span>,</span><br><span class="line">		calculateIt: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	 setTimeout (<span class="function"><span class="keyword">function</span>  (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.constantVal * <span class="keyword">this</span>.highValue);</span><br><span class="line">	&#125;, <span class="number">2000</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// The "this" object in the setTimeout function used the global highValue and constantVal variables, because the reference to "this" in the setTimeout function refers to the global window object, not to the myObj object as we might expect.​</span></span><br><span class="line"></span><br><span class="line">	myObj.calculateIt(); <span class="comment">// 400</span></span><br><span class="line">	<span class="comment">// This is an important point to remember.</span></span><br><span class="line"></span><br><span class="line">**Do not Pollute the Global Scope**</span><br><span class="line">you have to know that it is important to avoid creating many variables <span class="keyword">in</span> the global scope, such <span class="keyword">as</span> <span class="keyword">this</span>:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">// These two variables are in the global scope and they shouldn't be here</span></span><br><span class="line">	<span class="keyword">var</span> firstName, lastName;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">fullName</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log (<span class="string">"Full Name: "</span> + firstName + <span class="string">" "</span> + lastName );</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">This is the improved code and the proper way to avoid polluting the global scope</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">// Declare the variables inside the function where they are local variables</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">fullName</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> firstName = <span class="string">"Michael"</span>, lastName = <span class="string">"Jackson"</span>;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">console</span>.log (<span class="string">"Full Name: "</span> + firstName + <span class="string">" "</span> + lastName );</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Variable Hoisting</strong><br><em>All variable declarations are hoisted (lifted and declared) to the top of the function</em>, if defined in a function, or the top of the global context, if outside a function.</p>
 <p>It is important to know that only variable declarations are hoisted to the top, <strong>not variable initialization or assignments</strong> (when the variable is assigned a value).</p>
 <p>Variable Hoisting Example:</p>
-<pre><code>function showName () {
-console.log (&quot;First Name: &quot; + name);
-var name = &quot;Ford&quot;;
-console.log (&quot;Last Name: &quot; + name);
-}
-
-showName (); 
-// First Name: undefined
-// Last Name: Ford
-
-// The reason undefined prints first is because the local variable name was hoisted to the top of the function​
-// Which means it is this local variable that get calls the first time.
-// This is how the code is actually processed by the JavaScript engine:
-
-function showName () {
-    var name; // name is hoisted (note that is undefined at this point, since the assignment happens below)
-console.log (&quot;First Name: &quot; + name); // First Name: undefined
-
-name = &quot;Ford&quot;; // name is assigned a value
-
-// now name is Ford
-console.log (&quot;Last Name: &quot; + name); // Last Name: Ford
-}
-</code></pre><p><strong>Function Declaration Overrides Variable Declaration When Hoisted</strong><br><code>Both function declaration and variable declarations are hoisted to the top of the containing scope.</code> And <code>function declaration takes precedence over variable declarations (but not over variable assignment).</code> As is noted above, variable assignment is not hoisted, and neither is function assignment. As a reminder, this is a function assignment: var myFunction = function () {}.<br>Here is a basic example to demonstrate:</p>
-<pre><code>// Both the variable and the function are named myName
-var myName;
-function myName () {
-console.log (&quot;Rich&quot;);
-}
-
-// The function declaration overrides the variable name
-console.log(typeof myName); // function
-</code></pre><hr>
-<pre><code> // But in this example, the variable assignment overrides the function declaration
-var myName = &quot;Richard&quot;; // This is the variable assignment (initialization) that overrides the function declaration.
-
-function myName () {
-console.log (&quot;Rich&quot;);
-}
-
-console.log(typeof myName); // string 
-</code></pre><p>It is important to note that <code>function expressions</code>, such as the example below, <code>are not hoisted</code>.</p>
-<pre><code>var myName = function () {
-console.log (&quot;Rich&quot;);
-} 
-</code></pre><p>In <code>strict mode</code>, an error will occur if you assign a variable a value without first declaring the variable. Always declare your variables.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showName</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log (<span class="string">"First Name: "</span> + name);</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">"Ford"</span>;</span><br><span class="line"><span class="built_in">console</span>.log (<span class="string">"Last Name: "</span> + name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">showName (); </span><br><span class="line"><span class="comment">// First Name: undefined</span></span><br><span class="line"><span class="comment">// Last Name: Ford</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// The reason undefined prints first is because the local variable name was hoisted to the top of the function​</span></span><br><span class="line"><span class="comment">// Which means it is this local variable that get calls the first time.</span></span><br><span class="line"><span class="comment">// This is how the code is actually processed by the JavaScript engine:</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showName</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> name; <span class="comment">// name is hoisted (note that is undefined at this point, since the assignment happens below)</span></span><br><span class="line"><span class="built_in">console</span>.log (<span class="string">"First Name: "</span> + name); <span class="comment">// First Name: undefined</span></span><br><span class="line"></span><br><span class="line">name = <span class="string">"Ford"</span>; <span class="comment">// name is assigned a value</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// now name is Ford</span></span><br><span class="line"><span class="built_in">console</span>.log (<span class="string">"Last Name: "</span> + name); <span class="comment">// Last Name: Ford</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Function Declaration Overrides Variable Declaration When Hoisted</strong><br><code>Both function declaration and variable declarations are hoisted to the top of the containing scope.</code> And <code>function declaration takes precedence over variable declarations (but not over variable assignment).</code> As is noted above, variable assignment is not hoisted, and neither is function assignment. As a reminder, this is a function assignment: var myFunction = function () {}.<br>Here is a basic example to demonstrate:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">// Both the variable and the function are named myName</span></span><br><span class="line">	<span class="keyword">var</span> myName;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">myName</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log (<span class="string">"Rich"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// The function declaration overrides the variable name</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">typeof</span> myName); <span class="comment">// function</span></span><br><span class="line">------</span><br><span class="line">	 <span class="comment">// But in this example, the variable assignment overrides the function declaration</span></span><br><span class="line">	<span class="keyword">var</span> myName = <span class="string">"Richard"</span>; <span class="comment">// This is the variable assignment (initialization) that overrides the function declaration.</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">myName</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log (<span class="string">"Rich"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">typeof</span> myName); <span class="comment">// string </span></span><br><span class="line"></span><br><span class="line">It is important to note that <span class="string">`function expressions`</span>, such <span class="keyword">as</span> the example below, <span class="string">`are not hoisted`</span>.</span><br><span class="line"></span><br><span class="line">	var myName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log (<span class="string">"Rich"</span>);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>In <code>strict mode</code>, an error will occur if you assign a variable a value without first declaring the variable. Always declare your variables.</p>
 
       
     </div>
