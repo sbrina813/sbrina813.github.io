@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>JavaScript Variable Scope and Hoisting | Sabrina&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Extract from javascriptissexy
+##Variable Scope
+Definition: A variable’s scope is the context in which the variable exists. The scope specifies from where you can access a variable and whether you have">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript Variable Scope and Hoisting">
+<meta property="og:url" content="http://yoursite.com/2016/03/15/variable-scope-n-hoisting/index.html">
+<meta property="og:site_name" content="Sabrina's Blog">
+<meta property="og:description" content="Extract from javascriptissexy
+##Variable Scope
+Definition: A variable’s scope is the context in which the variable exists. The scope specifies from where you can access a variable and whether you have">
+<meta property="og:updated_time" content="2016-03-16T05:20:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript Variable Scope and Hoisting">
+<meta name="twitter:description" content="Extract from javascriptissexy
+##Variable Scope
+Definition: A variable’s scope is the context in which the variable exists. The scope specifies from where you can access a variable and whether you have">
+  
+    <link rel="alternative" href="/atom.xml" title="Sabrina&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/avatar.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Sabrina Jiang</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">可知 红颜弹指老，刹那芳华？</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/sbrina813" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="mailto:sabrina.jiang813@gmail.com" title="mail">mail</a>
+					        
+								<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/sabrinajiang" title="linkedin">linkedin</a>
+					        
+								<a class="Website" target="_blank" href="http://sabrinajiang.com/" title="Website">Website</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Sabrina Jiang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/avatar.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Sabrina Jiang</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">可知 红颜弹指老，刹那芳华？</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/sbrina813" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="mailto:sabrina.jiang813@gmail.com" title="mail">mail</a>
+			        
+						<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/sabrinajiang" title="linkedin">linkedin</a>
+			        
+						<a class="Website" target="_blank" href="http://sabrinajiang.com/" title="Website">Website</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-variable-scope-n-hoisting" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/15/variable-scope-n-hoisting/" class="article-date">
+  	<time datetime="2016-03-16T05:19:43.000Z" itemprop="datePublished">2016-03-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript Variable Scope and Hoisting
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://javascriptissexy.com/javascript-variable-scope-and-hoisting-explained/" target="_blank" rel="external">Extract from javascriptissexy</a></p>
+<p>##Variable Scope</p>
+<p><strong>Definition:</strong> A variable’s scope is the context in which the variable exists. The scope specifies from where you can access a variable and whether you have access to the variable in that context.<br>Variables have either a <strong>local scope</strong> or a <strong>global scope</strong>.</p>
+<p><strong>Local Variables (Function-level scope)</strong><br>Variables declared within a function are local variables and are only accessible within that function or by functions inside that function.</p>
+<ul>
+<li><p><strong>No Block-Level Scope</strong>(variables scoped to surrounding curly brackets) example: variable in function without “var” is to be a global variable. </p>
+</li>
+<li><p><strong>Local Variables Have Priority Over Global Variables in Functions</strong><br>If you declare a global variable and a local variable with the same name, the local variable will have priority when you attempt to use the variable inside a function (local scope)</p>
+<pre><code>var name = &quot;Paul&quot;;
+
+function users () {
+    // Here, the name variable is local and it takes precedence over the same name variable in the global scope​
+var name = &quot;Jack&quot;;
+
+// The search for name starts right here inside the function before it attempts to look outside the function in the global scope​
+console.log (name); 
+}
+
+users (); // Jack
+</code></pre></li>
+</ul>
+<p><strong>Global Variables</strong><br>All variables declared outside a function are in the global scope. In the browser, which is what we are concerned with as front-end developers, the global context or scope is the window object (or the entire HTML document).</p>
+<ul>
+<li>If a variable is initialized (assigned a value) without first being declared with the var keyword, it is automatically added to the global context and it is thus a global variable</li>
+</ul>
+<p>Pay attention to i: </p>
+<pre><code>for (var i = 1; i &lt;= 10; i++) {
+    console.log (i); // outputs 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+};
+
+// The variable i is a global variable and it is accessible in the following function with the last value it was assigned above ​
+function aNumber () {
+console.log(i);
+}
+
+// The variable i in the aNumber function below is the global variable i that was changed in the for loop above. Its last value was 11, set just before the for loop exited:
+aNumber ();  // 11
+</code></pre><ul>
+<li><strong>setTimeout</strong> Variables are Executed in the Global Scope<br>Note that all functions in setTimeout are executed in the global scope. This is a tricky bit; consider this:</li>
+</ul>
+<p>// The use of the “this” object inside the setTimeout function refers to the Window object, not to myObj​</p>
+<pre><code>var highValue = 200;
+var constantVal = 2;
+var myObj = {
+    highValue: 20,
+    constantVal: 5,
+    calculateIt: function () {
+ setTimeout (function  () {
+    console.log(this.constantVal * this.highValue);
+}, 2000);
+    }
+}
+
+// The &quot;this&quot; object in the setTimeout function used the global highValue and constantVal variables, because the reference to &quot;this&quot; in the setTimeout function refers to the global window object, not to the myObj object as we might expect.​
+
+myObj.calculateIt(); // 400
+// This is an important point to remember.
+</code></pre><p><strong>Do not Pollute the Global Scope</strong><br>you have to know that it is important to avoid creating many variables in the global scope, such as this:</p>
+<pre><code>// These two variables are in the global scope and they shouldn&apos;t be here
+var firstName, lastName;
+
+function fullName () {
+    console.log (&quot;Full Name: &quot; + firstName + &quot; &quot; + lastName );
+}
+</code></pre><p>This is the improved code and the proper way to avoid polluting the global scope</p>
+<pre><code>// Declare the variables inside the function where they are local variables
+
+function fullName () {
+    var firstName = &quot;Michael&quot;, lastName = &quot;Jackson&quot;;
+
+    console.log (&quot;Full Name: &quot; + firstName + &quot; &quot; + lastName );
+}
+</code></pre><p><strong>Variable Hoisting</strong><br><em>All variable declarations are hoisted (lifted and declared) to the top of the function</em>, if defined in a function, or the top of the global context, if outside a function.</p>
+<p>It is important to know that only variable declarations are hoisted to the top, <strong>not variable initialization or assignments</strong> (when the variable is assigned a value).</p>
+<p>Variable Hoisting Example:</p>
+<pre><code>function showName () {
+console.log (&quot;First Name: &quot; + name);
+var name = &quot;Ford&quot;;
+console.log (&quot;Last Name: &quot; + name);
+}
+
+showName (); 
+// First Name: undefined
+// Last Name: Ford
+
+// The reason undefined prints first is because the local variable name was hoisted to the top of the function​
+// Which means it is this local variable that get calls the first time.
+// This is how the code is actually processed by the JavaScript engine:
+
+function showName () {
+    var name; // name is hoisted (note that is undefined at this point, since the assignment happens below)
+console.log (&quot;First Name: &quot; + name); // First Name: undefined
+
+name = &quot;Ford&quot;; // name is assigned a value
+
+// now name is Ford
+console.log (&quot;Last Name: &quot; + name); // Last Name: Ford
+}
+</code></pre><p><strong>Function Declaration Overrides Variable Declaration When Hoisted</strong><br><code>Both function declaration and variable declarations are hoisted to the top of the containing scope.</code> And <code>function declaration takes precedence over variable declarations (but not over variable assignment).</code> As is noted above, variable assignment is not hoisted, and neither is function assignment. As a reminder, this is a function assignment: var myFunction = function () {}.<br>Here is a basic example to demonstrate:</p>
+<pre><code>// Both the variable and the function are named myName
+var myName;
+function myName () {
+console.log (&quot;Rich&quot;);
+}
+
+// The function declaration overrides the variable name
+console.log(typeof myName); // function
+</code></pre><hr>
+<pre><code> // But in this example, the variable assignment overrides the function declaration
+var myName = &quot;Richard&quot;; // This is the variable assignment (initialization) that overrides the function declaration.
+
+function myName () {
+console.log (&quot;Rich&quot;);
+}
+
+console.log(typeof myName); // string 
+</code></pre><p>It is important to note that <code>function expressions</code>, such as the example below, <code>are not hoisted</code>.</p>
+<pre><code>var myName = function () {
+console.log (&quot;Rich&quot;);
+} 
+</code></pre><p>In <code>strict mode</code>, an error will occur if you assign a variable a value without first declaring the variable. Always declare your variables.</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/15/node-interview/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Node interview questions</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Sabrina Jiang
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
