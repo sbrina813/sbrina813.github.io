@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Node interview questions | Sabrina&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="extract from CareerGuru
+1)      What is node.js?
+Node.js is a Server side scripting which is used to build scalable programs. Its multiple advantages over other server side languages, the prominent be">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node interview questions">
+<meta property="og:url" content="http://yoursite.com/2016/03/15/node-interview/index.html">
+<meta property="og:site_name" content="Sabrina's Blog">
+<meta property="og:description" content="extract from CareerGuru
+1)      What is node.js?
+Node.js is a Server side scripting which is used to build scalable programs. Its multiple advantages over other server side languages, the prominent be">
+<meta property="og:updated_time" content="2016-03-16T05:17:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Node interview questions">
+<meta name="twitter:description" content="extract from CareerGuru
+1)      What is node.js?
+Node.js is a Server side scripting which is used to build scalable programs. Its multiple advantages over other server side languages, the prominent be">
+  
+    <link rel="alternative" href="/atom.xml" title="Sabrina&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/avatar.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Sabrina Jiang</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">可知 红颜弹指老，刹那芳华？</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">Home</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/sbrina813" title="github">github</a>
+					        
+								<a class="mail" target="_blank" href="mailto:sabrina.jiang813@gmail.com" title="mail">mail</a>
+					        
+								<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/sabrinajiang" title="linkedin">linkedin</a>
+					        
+								<a class="Website" target="_blank" href="http://sabrinajiang.com/" title="Website">Website</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Sabrina Jiang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/avatar.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Sabrina Jiang</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">可知 红颜弹指老，刹那芳华？</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">Home</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/sbrina813" title="github">github</a>
+			        
+						<a class="mail" target="_blank" href="mailto:sabrina.jiang813@gmail.com" title="mail">mail</a>
+			        
+						<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/sabrinajiang" title="linkedin">linkedin</a>
+			        
+						<a class="Website" target="_blank" href="http://sabrinajiang.com/" title="Website">Website</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-node-interview" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/15/node-interview/" class="article-date">
+  	<time datetime="2016-03-16T05:17:07.000Z" itemprop="datePublished">2016-03-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Node interview questions
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://career.guru99.com/top-25-interview-questions-on-node-js/" target="_blank" rel="external">extract from CareerGuru</a></p>
+<p><strong>1)      What is node.js?</strong></p>
+<p>Node.js is a Server side scripting which is used to build scalable programs. Its multiple advantages over other server side languages, the prominent being non-blocking I/O.</p>
+<p><strong>2)      How node.js works?</strong></p>
+<p>Node.js works on a v8 environment, it is a virtual machine that utilizes JavaScript as its scripting language and achieves high output via non-blocking I/O and single threaded event loop.</p>
+<p><strong>3)      What do you mean by the term I/O ?</strong></p>
+<p>I/O is the shorthand for input and output, and it will access anything outside of your application. It will be loaded into the machine memory to run the program, once the application is started.</p>
+<p><strong>4)      What does event-driven programming mean?</strong></p>
+<p>In computer programming, event driven programming is a programming paradigm in which the flow of the program is determined by events like messages from other programs or threads. It is an application architecture technique divided into two sections 1) Event Selection 2) Event Handling</p>
+<p><strong>5)      Where can we use node.js?</strong></p>
+<p>Node.js can be used for the following purposes</p>
+<p>a)      Web applications ( especially real-time web apps )</p>
+<p>b)      Network applications</p>
+<p>c)       Distributed systems</p>
+<p>d)      General purpose applications</p>
+<p><strong>6)      What is the advantage of using node.js?</strong></p>
+<p>a)      It provides an easy way to build scalable network programs</p>
+<p>b)      Generally fast</p>
+<p>c)       Great concurrency</p>
+<p>d)      Asynchronous everything</p>
+<p>e)      Almost never blocks</p>
+<p><strong>7)      What are the two types of API functions in Node.js ?</strong></p>
+<p>The two types of API functions in Node.js are</p>
+<p>a)      Asynchronous, non-blocking functions</p>
+<p>b)      Synchronous, blocking functions</p>
+<p><strong>8)      What is control flow function?</strong></p>
+<p>A generic piece of code which runs in between several asynchronous function calls is known as control flow function.</p>
+<p><strong>9)      Explain the steps how “Control Flow” controls the functions calls?</strong></p>
+<p>a)      Control the order of execution</p>
+<p>b)      Collect data</p>
+<p>c)       Limit concurrency</p>
+<p>d)      Call the next step in program</p>
+<p><strong>10)   Why Node.js is single threaded?</strong></p>
+<p>For async processing, Node.js was created explicitly as an experiment. It is believed that more performance and scalability can be achieved by doing async processing on a single thread under typical web loads than the typical thread based implementation.</p>
+<p><strong>11)   Does node run on windows?</strong></p>
+<p>Yes – it does. Download the MSI installer from <a href="http://nodejs.org/download/" target="_blank" rel="external">http://nodejs.org/download/</a></p>
+<p><strong>12)   Can you access DOM in node?</strong></p>
+<p>No, you cannot access DOM in node.</p>
+<p><strong>13)   Using the event loop what are the tasks that should be done asynchronously?</strong></p>
+<p>a)      I/O operations</p>
+<p>b)      Heavy computation</p>
+<p>c)       Anything requiring blocking</p>
+<p><strong>14)   Why node.js is quickly gaining attention from JAVA programmers?</strong></p>
+<p>Node.js is quickly gaining attention as it is a loop based server for JavaScript. Node.js gives user the ability to write the JavaScript on the server, which has access to things like HTTP stack, file I/O, TCP and databases.</p>
+<p><strong>15)   What are the two arguments that async.queue takes?</strong></p>
+<p>The two arguments that async.queue takes</p>
+<p>a)      Task function</p>
+<p>b)      Concurrency value</p>
+<p><strong>16)   What is an event loop in Node.js ?</strong></p>
+<p>To process and handle external events and to convert them into callback invocations an event loop is used. So, at I/O calls, node.js can switch from one request to another .</p>
+<p><strong>17)   Mention the steps by which you can async in Node.js?</strong></p>
+<p>By following steps you can async Node.js</p>
+<p>a)      First class functions</p>
+<p>b)      Function composition</p>
+<p>c)       Callback Counters</p>
+<p>d)      Event loops</p>
+<p><strong>18)    What are the pros and cons of Node.js?</strong></p>
+<p>Pros:</p>
+<p>a)      If your application does not have any CPU intensive computation, you can build it in Javascript top to bottom, even down to the database level if you use JSON storage object DB like MongoDB.</p>
+<p>b)      Crawlers receive a full-rendered HTML response, which is far more SEO friendly rather than a single page application or a websockets app run on top of Node.js.</p>
+<p>Cons:</p>
+<p>a)       Any intensive CPU computation will block node.js responsiveness, so a threaded platform is a better approach.<br>b)      Using relational database with Node.js is considered less favourable</p>
+<p><strong>19)   How Node.js overcomes the problem of blocking of I/O operations?</strong></p>
+<p>Node.js solves this problem by putting the event based model at its core, using an event loop instead of threads.</p>
+<p><strong>20)   What is the difference between Node.js vs Ajax?</strong></p>
+<p>The difference between Node.js and Ajax is that, Ajax (short for Asynchronous Javascript and XML) is a client side technology, often used for updating the contents of the page without refreshing it. While,Node.js is Server Side Javascript, used for developing server software. Node.js does not execute in the browser but by the server.</p>
+<p><strong>21)   What are the Challenges with Node.js ?</strong></p>
+<p>Emphasizing on the technical side, it’s a bit of challenge in Node.js to have one process with one thread to scale up on multi core server.</p>
+<p><strong>22)    What does it mean “non-blocking” in node.js?</strong></p>
+<p>In node.js “non-blocking” means that its IO is non-blocking.  Node uses “libuv” to handle its IO in a platform-agnostic way. On windows, it uses completion ports for unix it uses epoll or kqueue etc. So, it makes a non-blocking request and upon a request, it queues it within the event loop which call the JavaScript ‘callback’ on the main JavaScript thread.</p>
+<p><strong>23)   What is the command that is used in node.js to import external libraries?</strong></p>
+<p>Command “require” is used for importing external libraries, for example, “var http=require (“http”)”.  This will load the http library and the single exported object through the http variable.</p>
+<p><strong>24)   Mention the framework most commonly used in node.js?</strong></p>
+<p>“Express” is the most common framework used in node.js</p>
+<p><strong>25)   What is ‘Callback’ in node.js?</strong></p>
+<p>Callback function is used in node.js to deal with multiple requests made to the server. Like if you have a large file which is going to take a long time for a server to read and if you don’t want a server to get engage in reading that large file while dealing with other requests, call back function is used. Call back function allows the server to deal with pending request first and call a function when it is finished.</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/12/markdown-basics/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Markdown basics</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Sabrina Jiang
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
