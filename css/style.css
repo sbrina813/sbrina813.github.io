@@ -672,6 +672,13 @@ a {
 #header .header-nav .social a.douban:hover {
   border: 1px solid #06c611;
 }
+#header .header-nav .social a.website {
+  background: url("/img/website.png") center no-repeat #06c611;
+  border: 1px solid #06c611;
+}
+#header .header-nav .social a.website:hover {
+  border: 1px solid #06c611;
+}
 #header .header-nav .social a.mail {
   background: url("/img/mail.png") center no-repeat #005a87;
   border: 1px solid #005a87;
