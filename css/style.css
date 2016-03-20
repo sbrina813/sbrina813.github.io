@@ -624,11 +624,11 @@ a {
   border: 1px solid #cf5d0f;
 }
 #header .header-nav .social a.github {
-  background: url("/img/github.png") center no-repeat #afb6ca;
+  background: url("/img/github.png") center no-repeat #212225;
   border: 1px solid #afb6ca;
 }
 #header .header-nav .social a.github:hover {
-  border: 1px solid #909ab6;
+  border: 1px solid #7c7c7c;
 }
 #header .header-nav .social a.facebook {
   background: url("/img/facebook.png") center no-repeat #3b5998;
@@ -680,11 +680,11 @@ a {
   border: 1px solid #06c611;
 }
 #header .header-nav .social a.mail {
-  background: url("/img/mail.png") center no-repeat #005a87;
+  background: url("/img/mail.png") center no-repeat #0078d8;
   border: 1px solid #005a87;
 }
 #header .header-nav .social a.mail:hover {
-  border: 1px solid #006b98;
+  border: 1px solid #0078d8;
 }
 #header .switch-part {
   width: 100%;
