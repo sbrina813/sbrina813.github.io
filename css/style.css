@@ -624,8 +624,9 @@ a {
   border: 1px solid #cf5d0f;
 }
 #header .header-nav .social a.github {
-  background: url("/img/github.png") center no-repeat #212225;
+  background: url("/img/github.svg") center no-repeat #212225;
   border: 1px solid #afb6ca;
+  height: 16px;
 }
 #header .header-nav .social a.github:hover {
   border: 1px solid #7c7c7c;
