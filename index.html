@@ -938,71 +938,6 @@
 
 
   
-    <article id="post-this-in-javascript" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/09/08/this-in-javascript/" class="article-date">
-  	<time datetime="2015-09-08T07:00:00.000Z" itemprop="datePublished">2015-09-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/08/this-in-javascript/">this in JavaScript</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/" target="_blank" rel="external">Extrct form JavaScriptissexy</a></p>
-<p>Note that when we use <code>strict mode</code>, this holds the value of undefined in global functions and in anonymous functions that are not bound to any object.</p>
-<blockquote>
-<p>Even though it appears <em>this</em> refers to the object where it is<br>defined, it is not until an object invokes the this Function that<br><em>this</em> is actually assigned a value. And the value it is assigned is based exclusively on the object that invokes the this Function. <em>this</em><br>has the value of the invoking object in most circumstances. However,<br>there are a few scenarios where <em>this</em> does not have the value of the<br>invoking object.</p>
-</blockquote>
-<p><strong>The use of <em>this</em> in the global scope</strong><br>when we use <em>this</em> in a global function, it refers to (and has the value of) the global window object (not in strict mode though, as noted earlier) that is the main container of the entire JavaScript application or web page.</p>
-<p><strong>When <em>this</em> is most misunderstood and becomes tricky</strong><br>The this keyword is most misunderstood when we borrow a method that uses <em>this</em>, when we assign a method that uses this to a variable, when a function that uses <em>this</em> is <code>passed as a callback function</code>, and when this is used inside a closure—an inner function. </p>
-<p><a href="http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/" target="_blank" rel="external"><strong>4 Examples need to digest for future use</strong></a></p>
-<p><strong>Always remember that <em>this</em> is assigned the value of the object that invoked the this Function.</strong></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-bind-apply-call-js" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1051,6 +986,71 @@
 <p>The Apply method sets the this value to callbackObj. This allows us to execute the callback function with the this value set explicitly, so the parameters passed to the callback function will be set on the clientData object:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// The clientData object will be used by the Apply method to set the "this" value​</span></span><br><span class="line">getUserInput (<span class="string">"Barack"</span>, <span class="string">"Obama"</span>, clientData.setUserName, clientData);</span><br><span class="line"><span class="comment">// the fullName property on the clientData was correctly set​</span></span><br><span class="line"><span class="built_in">console</span>.log (clientData.fullName); <span class="comment">// Barack Obama​</span></span><br></pre></td></tr></table></figure>
 <p><a href="http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/" target="_blank" rel="external">Examples</a> of <strong>Borrowing Functions with Apply and Call (A Must Know)</strong></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-this-in-javascript" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/08/this-in-javascript/" class="article-date">
+  	<time datetime="2015-09-08T07:00:00.000Z" itemprop="datePublished">2015-09-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/08/this-in-javascript/">this in JavaScript</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/" target="_blank" rel="external">Extrct form JavaScriptissexy</a></p>
+<p>Note that when we use <code>strict mode</code>, this holds the value of undefined in global functions and in anonymous functions that are not bound to any object.</p>
+<blockquote>
+<p>Even though it appears <em>this</em> refers to the object where it is<br>defined, it is not until an object invokes the this Function that<br><em>this</em> is actually assigned a value. And the value it is assigned is based exclusively on the object that invokes the this Function. <em>this</em><br>has the value of the invoking object in most circumstances. However,<br>there are a few scenarios where <em>this</em> does not have the value of the<br>invoking object.</p>
+</blockquote>
+<p><strong>The use of <em>this</em> in the global scope</strong><br>when we use <em>this</em> in a global function, it refers to (and has the value of) the global window object (not in strict mode though, as noted earlier) that is the main container of the entire JavaScript application or web page.</p>
+<p><strong>When <em>this</em> is most misunderstood and becomes tricky</strong><br>The this keyword is most misunderstood when we borrow a method that uses <em>this</em>, when we assign a method that uses this to a variable, when a function that uses <em>this</em> is <code>passed as a callback function</code>, and when this is used inside a closure—an inner function. </p>
+<p><a href="http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/" target="_blank" rel="external"><strong>4 Examples need to digest for future use</strong></a></p>
+<p><strong>Always remember that <em>this</em> is assigned the value of the object that invoked the this Function.</strong></p>
 
       
     </div>

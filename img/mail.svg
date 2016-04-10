@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="17px" height="13px" viewBox="0 0 17 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15855) - http://www.bohemiancoding.com/sketch -->
+    <title>email</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="email" sketch:type="MSLayerGroup" stroke="#979797" stroke-width="0.5">
+            <rect id="Rectangle-1" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="17" height="12.5652174"></rect>
+            <path d="M0.260869622,0.260869563 L8,6" id="Line" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path d="M8.26086956,0.260869563 L17,6" id="Line-Copy" stroke-opacity="0.881850091" stroke-linecap="square" sketch:type="MSShapeGroup" transform="translate(12.500000, 3.000000) scale(-1, 1) translate(-12.500000, -3.000000) "></path>
+        </g>
+    </g>
+</svg>

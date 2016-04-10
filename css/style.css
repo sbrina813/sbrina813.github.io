@@ -652,7 +652,7 @@ a {
   border: 1px solid #24c1f6;
 }
 #header .header-nav .social a.linkedin {
-  background: url("/img/linkedin.png") center no-repeat #005a87;
+  background: url("/img/linkedin.svg") center no-repeat #005a87;
   border: 1px solid #005a87;
 }
 #header .header-nav .social a.linkedin:hover {
@@ -680,11 +680,11 @@ a {
   border: 1px solid #7c7c7c;
 }
 #header .header-nav .social a.mail {
-  background: url("/img/mail.png") center no-repeat #0078d8;
-  border: 1px solid #005a87;
+  background: url("/img/mail.svg") center no-repeat #0078d8;
+  border: 1px solid #0078d8;
 }
 #header .header-nav .social a.mail:hover {
-  border: 1px solid #0078d8;
+  border: 1px solid #005a87;
 }
 #header .switch-part {
   width: 100%;
